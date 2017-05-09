@@ -1,5 +1,5 @@
 package takhte.nard;
-
+ 
 import ij.ImagePlus;
 import java.awt.Color;
 import java.awt.Rectangle;
@@ -8,7 +8,7 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
+import javax.swing.JLabel; 
 
 class Mohre {
     int color;
@@ -20,7 +20,7 @@ class Mohre {
     Mohre(int color){
         this.color = color;
         ImagePlus ip = new ImagePlus();
-        ip.setProcessor(new ImagePlus("a", new ImageIcon((color == 1 ? "C:\\Users\\Me\\Desktop\\blueCircle.png" : "C:\\Users\\Me\\Desktop\\redCircle.png")).getImage()).getProcessor().resize(width, heigth));
+        ip.setProcessor(new ImagePlus("a", new ImageIcon((color == 1 ? "./Image/blueCircle.png" : "./Image/redCircle.png")).getImage()).getProcessor().resize(width, heigth));
         object = new JLabel(new ImageIcon(ip.getImage()));        
     }
     void show(){
@@ -39,7 +39,7 @@ class Stick{
         mohreha = new ArrayList<>();
         this.number = number;
         ImagePlus ip = new ImagePlus();
-        ip.setProcessor(new ImagePlus("a", new ImageIcon("C:\\Users\\Me\\Desktop\\triangle1.png").getImage()).getProcessor().resize(width, heigth));
+        ip.setProcessor(new ImagePlus("a", new ImageIcon("./Image/triangle1.png").getImage()).getProcessor().resize(width, heigth));
         if (number < 13) ip.getProcessor().rotate(180);
         stickObject = new JLabel(new ImageIcon(ip.getImage()));
         
